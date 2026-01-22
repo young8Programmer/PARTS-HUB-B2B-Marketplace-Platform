@@ -13,6 +13,7 @@ import { UpdateOrderStatusDto } from './dto/update-order-status.dto';
 import { ProductsService } from '../products/products.service';
 import { PaymentsService } from '../payments/payments.service';
 import { OrderStatus } from '../common/enums/order-status.enum';
+import { PaymentProvider } from '../common/enums/payment-provider.enum';
 import { Role } from '../common/enums/role.enum';
 import { AuditLogService } from '../audit-log/audit-log.service';
 import { SellersService } from '../sellers/sellers.service';
@@ -221,7 +222,7 @@ export class OrdersService {
 
   async processPayment(
     orderId: string,
-    paymentProvider: string,
+    paymentProvider: PaymentProvider,
     userId: string,
   ): Promise<Order> {
     const order = await this.findOne(orderId);

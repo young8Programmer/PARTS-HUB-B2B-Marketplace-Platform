@@ -5,9 +5,8 @@ import {
   IsString,
   IsUUID,
   Min,
-  Type,
 } from 'class-validator';
-import { Transform } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 
 export class SearchProductDto {
   @ApiProperty({ required: false })
